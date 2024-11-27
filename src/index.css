@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0A0F1C] text-white font-raleway;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+@layer components {
+  .hero-gradient {
+    @apply relative before:absolute before:w-full before:h-full before:bg-[radial-gradient(circle_at_70%_50%,rgba(255,215,0,0.15)_0%,transparent_50%)] before:z-[-1];
+  }
+
+  .feature-card {
+    @apply bg-[#0F1629] p-6 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10;
+  }
+
+  .nav-link {
+    @apply text-gray-300 hover:text-primary transition-colors duration-200;
+  }
+
+  .star {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
